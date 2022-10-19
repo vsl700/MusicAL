@@ -2,9 +2,6 @@ package com.vasciie.musical.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
-
-//import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +9,6 @@ import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.vasciie.musical.R;
 
@@ -71,7 +66,7 @@ public class YoutubeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_youtube, container, false);
 
         final String api_key = "AIzaSyAv_zsB_3pithPU1L8nP98QSLDaranF7Mo";
-        YouTubePlayerView ytPlayer = (YouTubePlayerView) v.findViewById(R.id.ytPlayer);
+        YouTubePlayerView ytPlayer = v.findViewById(R.id.ytPlayer);
         ytPlayer.initialize(
                 api_key,
                 new YouTubePlayer.OnInitializedListener() {

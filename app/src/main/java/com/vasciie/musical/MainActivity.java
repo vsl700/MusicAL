@@ -1,17 +1,9 @@
 package com.vasciie.musical;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
-import com.google.android.youtube.player.YouTubePlayerView;
+import com.vasciie.musical.fragments.MenuFragment;
 import com.vasciie.musical.fragments.YoutubeFragment;
 
 public class MainActivity extends YouTubeBaseActivity {
@@ -27,6 +19,11 @@ public class MainActivity extends YouTubeBaseActivity {
             getFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
                     .add(R.id.youtube_fragment, YoutubeFragment.newInstance("", ""), null)
+                    .commit();
+
+            getFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(R.id.fragmentContainerView, MenuFragment.newInstance("", ""), null)
                     .commit();
         }
 
